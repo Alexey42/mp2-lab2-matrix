@@ -26,7 +26,7 @@ TEST(TMatrix, can_create_copied_matrix)
 
 TEST(TMatrix, copied_matrix_is_equal_to_source_one)
 {
-  ADD_FAILURE();
+	ADD_FAILURE();
 }
 
 TEST(TMatrix, copied_matrix_has_its_own_memory)
@@ -76,7 +76,16 @@ TEST(TMatrix, can_assign_matrices_of_different_size)
 
 TEST(TMatrix, compare_equal_matrices_return_true)
 {
-  ADD_FAILURE();
+	TMatrix<int> a(40);
+	TMatrix<int> b(40);
+	EXPECT_TRUE(a == b);
+}
+
+TEST(TMatrix, compare_nonequal_matrices_return_true)
+{
+	TMatrix<int> a(40);
+	TMatrix<int> b(30);
+	EXPECT_TRUE(a != b);
 }
 
 TEST(TMatrix, compare_matrix_with_itself_return_true)
