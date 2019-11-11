@@ -63,7 +63,7 @@ public:
 template <class ValType>
 TVector<ValType>::TVector(int s, int si)
 {
-	if (s < 0 || si < 0 || s < si || s > MAX_VECTOR_SIZE) throw "Value is out of range";
+	if (s < 0 || si < 0 || s < si || s > MAX_VECTOR_SIZE || si > MAX_VECTOR_SIZE) throw "Value is out of range";
 	Size = s - si;
 	StartIndex = si;
 	pVector = new ValType[Size];
@@ -227,7 +227,7 @@ template <class ValType> // конструктор копирования
 TMatrix<ValType>::TMatrix(const TMatrix<ValType> &mt):TVector<TVector<ValType>>(mt) {}
 
 template <class ValType> // конструктор преобразования типа
-TMatrix<ValType>::TMatrix(const TVector<TVector<ValType> > &mt):TVector<TVector<ValType>>(mt) {}
+TMatrix<ValType>::TMatrix(const TVector<TVector<ValType>> &mt):TVector<TVector<ValType>>(mt) {}
 
 template <class ValType> // сравнение
 bool TMatrix<ValType>::operator==(const TMatrix<ValType> &mt) const
@@ -276,7 +276,7 @@ TMatrix<ValType> TMatrix<ValType>::operator-(const TMatrix<ValType> &mt)
 {
 	if (Size != mt.Size) throw "Invalid arguments";
 	TMatrix<ValType> temp(*this);
-	for (int i = 0; i < Size; i++) temp.pVector[i] -= v.pVector[i];
+	for (int i = 0; i < Size; i++) temp.pVector[i] = temp.pVector[i] - mt.pVector[i];
 	return temp;
 } /*--------------------------------------------------s-----------------------*/
 
