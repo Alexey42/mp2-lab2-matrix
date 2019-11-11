@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Lenovo\Lab2\mp2-lab2-matrix\include\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Lenovo\Lab2\mp2-lab2-matrix\include\utmatrix.h">
+      <Filter>Header Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{37F4E5E9-524A-35C5-BC49-9539BDF3E12D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
